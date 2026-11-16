@@ -4,10 +4,10 @@
 
 | Milestone | Date (UK time) |
 |---|---|
-| Challenge opens | Monday 17 November 2026, 09:00 |
-| Clarifying questions close | Friday 5 December 2026, 23:59 |
-| Submissions close | Monday 15 December 2026, 23:59 |
-| Feedback published | By Friday 16 January 2027 |
+| Challenge opens | Tuesday 17 November 2026, 09:00 |
+| Clarifying questions close | Saturday 5 December 2026, 23:59 |
+| Submissions close | Tuesday 15 December 2026, 23:59 |
+| Feedback published | By Saturday 16 January 2027 |
 
 Late submissions are welcome, but they're reviewed after on-time entries and may get lighter feedback.
 

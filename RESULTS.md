@@ -1,3 +1,3 @@
 # Results
 
-Results and a "common gaps" write-up will be published here by **Friday 16 January 2027**.
+Results and a "common gaps" write-up will be published here by **Saturday 16 January 2027**.

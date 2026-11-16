@@ -243,7 +243,7 @@ Summaries are from the Legal and Compliance memo. Where something is uncertain, 
 
 ## 7. Evidence pack
 
-### 7.1 Model spend by month (all providers, GBP, incl. VAT-exempt)
+### 7.1 Model spend by month (all providers, GBP, VAT-exempt)
 
 | Month (2026) | Spend | Notes |
 |---|---|---|

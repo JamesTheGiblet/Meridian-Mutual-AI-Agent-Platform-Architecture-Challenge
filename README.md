@@ -336,3 +336,7 @@ Submit a single PDF or Markdown bundle. **Max 45 pages excluding appendices.** D
 ## Rules
 
 Timeline, submission process and assessment: see [RULES.md](RULES.md).
+
+## Licence
+
+CC BY-NC-SA 4.0. See [LICENSE](LICENSE). Corrections: [CHANGELOG.md](CHANGELOG.md).

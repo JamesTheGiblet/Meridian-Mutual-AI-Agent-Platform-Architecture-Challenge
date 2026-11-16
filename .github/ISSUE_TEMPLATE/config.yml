@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a clarifying question
+    url: https://github.com/The-Giblets-Challenges/Meridian-Mutual-AI-Agent-Platform-Architecture-Challenge/discussions
+    about: Ask in Discussions under Q&A. Answers are public so everyone has the same information.
+  - name: Report an error in the brief
+    url: https://github.com/The-Giblets-Challenges/Meridian-Mutual-AI-Agent-Platform-Architecture-Challenge/discussions
+    about: Post it in Discussions. Fixes are logged in CHANGELOG.md.

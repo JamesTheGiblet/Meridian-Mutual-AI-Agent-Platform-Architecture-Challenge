@@ -1,0 +1,71 @@
+name: Submission
+description: Submit your entry to the Meridian Mutual architecture challenge
+title: "Submission: <your GitHub handle>"
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking on the challenge. Your submission should live in your own public repo. The commit SHA freezes your entry.
+  - type: input
+    id: repo
+    attributes:
+      label: Repo link
+      placeholder: https://github.com/you/your-meridian-submission
+    validations:
+      required: true
+  - type: input
+    id: sha
+    attributes:
+      label: Commit SHA you are submitting
+      description: Run `git rev-parse HEAD` in your repo
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level you're aiming at
+      options:
+        - Senior
+        - Staff
+        - Architect
+        - Principal
+    validations:
+      required: true
+  - type: input
+    id: hours
+    attributes:
+      label: Approximate hours spent
+    validations:
+      required: true
+  - type: dropdown
+    id: ai
+    attributes:
+      label: AI tool usage
+      options:
+        - None
+        - Light
+        - Heavy
+    validations:
+      required: true
+  - type: textarea
+    id: ai_detail
+    attributes:
+      label: What did you use AI for?
+      description: Optional, but honesty here doesn't cost you anything.
+  - type: dropdown
+    id: anon
+    attributes:
+      label: Results listing
+      options:
+        - List me by GitHub handle
+        - Keep me anonymous
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is my own work and I've read RULES.md
+          required: true

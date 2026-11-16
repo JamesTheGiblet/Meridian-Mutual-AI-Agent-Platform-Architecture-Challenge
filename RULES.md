@@ -20,8 +20,8 @@ Late submissions are welcome, but they're reviewed after on-time entries and may
 
 ## Clarifying questions
 
-- Open a GitHub Issue with the label `question`.
-- Answers are posted publicly on the issue so everyone has the same information.
+- Ask in this repo's **Discussions** tab, under the **Q&A** category.
+- Answers are posted publicly in the discussion so everyone has the same information.
 - Some questions will be answered with *"Not known. State your assumption."* That's deliberate.
 - Questions close on the date above.
 
@@ -36,13 +36,13 @@ The required deliverables are in **Section 8 of the README**:
 ## How to submit
 
 1. Put your submission in **your own public GitHub repo**.
-2. Open an Issue on this repo using the title `Submission: <your GitHub handle>`, including:
+2. Open a new Issue and choose the **Submission** template. It asks for:
    - a link to your repo
    - the **commit SHA** you're submitting (this freezes your entry, so you can't edit after the deadline)
    - approximate hours spent
    - the level you're aiming at: Senior / Staff / Architect / Principal
    - your AI tool usage: none / light / heavy, and what for
-3. Submission Issues stay **closed** until the deadline passes, so nobody can copy from them early.
+3. Submissions are public once posted. Your commit SHA timestamps your work, so copying is easy to spot.
 
 ## AI tools
 

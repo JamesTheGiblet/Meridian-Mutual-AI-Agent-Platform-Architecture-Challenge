@@ -332,3 +332,7 @@ Submit a single PDF or Markdown bundle. **Max 45 pages excluding appendices.** D
 ---
 
 *Part of [The Giblets Challenges](https://github.com/The-Giblets-Challenges). I wanted it. So I forged it. Now forge yours.*
+
+## Rules
+
+Timeline, submission process and assessment: see [RULES.md](RULES.md).

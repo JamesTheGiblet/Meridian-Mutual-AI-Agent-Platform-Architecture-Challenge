@@ -44,20 +44,32 @@ These are starting points, not requirements. Use whatever method you can defend.
 Use them, adapt them or ignore them.
 
 **ADR**
-ADR-NNN: <decision>
+
+~~~
+# ADR-NNN: <decision>
 Status: Proposed | Accepted | Superseded
 Context: <forces at play, constraints from the brief>
 Options considered: <A, B, C with trade-offs>
 Decision: <what and why>
 Consequences: <what gets easier, what gets harder, reversal cost>
+~~~
+
 **SLO**
+
+~~~
 Service / agent class:
 SLI: <what is measured, where, how>
 Objective: <target over window>
 Error budget: <amount>
 Budget policy: <what happens when it's spent, who decides>
+~~~
+
 **Risk register row**
+
+~~~
 ID | Risk | Likelihood (1-5) | Impact (1-5) | Owner (named stakeholder) | Mitigation | Residual risk | Trigger to revisit
+~~~
+
 ## A note on regulation
 
 The brief summarises real regimes: UK/EU GDPR, DORA, PRA SS2/21, the FCA Consumer Duty, the EU AI Act and German works council rights. You **don't** need to read the legislation.

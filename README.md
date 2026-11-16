@@ -340,3 +340,7 @@ Timeline, submission process and assessment: see [RULES.md](RULES.md).
 ## Licence
 
 CC BY-NC-SA 4.0. See [LICENSE](LICENSE). Corrections: [CHANGELOG.md](CHANGELOG.md).
+
+## Resources
+
+What you can and can't use, plus templates: see [RESOURCES.md](RESOURCES.md).

@@ -1,6 +1,8 @@
 # Meridian Mutual: AI Agent Platform Architecture Challenge
 
-A realistic architecture challenge for engineers working towards **Senior, Staff, Solutions Architect or AI Systems Architect** level.
+A realistic architecture challenge for engineers working towards **Senior, Staff, Architect or Principal** level, including Solutions Architect and AI Systems Architect roles.
+
+**Deadlines and how to submit:** see [RULES.md](RULES.md).
 
 You've just joined a fictional UK/EU insurer as Principal Architect. It has about 2,300 AI agents, four model providers, a hard budget cap, overlapping regulators and stakeholders who disagree with each other. Your job is to design the platform that gets it all under control, then defend it.
 
@@ -9,6 +11,7 @@ There's no single correct answer. This tests judgement, trade-offs and how you h
 ## How to take it
 
 - **Timebox:** aim for up to **8 hours of focused effort**, spread over a week if you like.
+- **Story time vs real time:** in the story, Priya wants your plan in a week. The real submission window is longer; dates are in [RULES.md](RULES.md).
 - **You won't finish everything to full depth.** Choosing what to go deep on is part of the challenge.
 - **Missing information:** state an assumption and keep going. Unstated assumptions count as gaps.
 - **Contradictions:** the brief contains some deliberately, as real engagements do. Resolving or escalating them is part of the work.
@@ -108,7 +111,7 @@ Data comes from a two-week discovery exercise: API key scans, provider invoices 
 
 | Provider | Access route | Contract | Regions available to us | Notes |
 |---|---|---|---|---|
-| **Provider A** (frontier lab) | Direct API and via AWS | **New:** 3-year committed spend, **$2.5m/yr minimum**, signed Oct 2026 by Procurement. 18% discount above commit. | US; EU (subset of models); UK inference "on roadmap" | Best eval scores on claims tasks. 3 incidents in 6 months, longest 3h 40m. |
+| **Provider A** (frontier lab) | Direct API and via AWS | **New:** 3-year committed spend, **$2.5m/yr minimum**, signed Oct 2026 by Procurement. Commit years align to the financial year, starting 1 Jan 2027. 18% discount applies only to spend **above** the commit. Spend via both access routes counts towards the commit. | US; EU (subset of models); UK inference "on roadmap" | Best eval scores on claims tasks. 3 incidents in 6 months, longest 3h 40m. |
 | **Provider B** (frontier lab via hyperscaler) | Azure-hosted | Pay-as-you-go. Provisioned throughput available as a monthly commit. | UK South, EU (Sweden, France) | Used by Versicherung. One 2-day latency degradation (p95 4s → 31s). |
 | **Provider C** (hyperscaler-native models) | GCP | Pay-as-you-go; no GCP footprint today | EU (Belgium, Netherlands) | Cheapest frontier-class tier. Procurement has not onboarded them. |
 | **Self-hosted open-weight** | Swindon data centre | n/a | UK (on-prem) | 32× A100 40GB, 3.5 years old. **Hardware support ends Q3 2027.** DC power-capped at +40 kW. Utilisation 22%. |
@@ -148,7 +151,7 @@ Data comes from a two-week discovery exercise: API key scans, provider invoices 
 | **Siobhan O'Connell** | Group DPO | Data minimisation. Prompt content retained ≤30 days unless a specific lawful basis exists. DPIAs for every agent touching personal data. | *"Logging every prompt is building the largest unstructured personal-data store in the company. Elena's 'forever' is a GDPR breach waiting to happen."* |
 | **Tomasz Wierzbicki** | Head of Model Risk Management | Every agent in the model inventory, tiered and validated. Decisions **reproducible for 7 years** for Life underwriting. | *"If a regulator asks why we declined Mrs Jones's critical illness cover in 2027, I need to replay it in 2033."* |
 | **Daniel Okafor** | MD, Claims | Best model on every claim. Agents never down during surge events. Freedom to buy vendor tools. | *"My storm-surge agents saved 19,000 handler hours last winter. Throttle them and I go back to agency staff at £38/hour. I'll buy my own if I have to."* |
-| **Hannah Liu** | Director, Digital & Customer | Customer chat at **99.95%** availability. Time to first token under 1.5s. Brand-safe responses. | *"Customers don't care which model is down. The chat is up, or it isn't."* |
+| **Hannah Liu** | Director, Digital & Customer | Customer chat at **99.95%** availability. Time to first token under 1.5s at p95. Brand-safe responses. | *"Customers don't care which model is down. The chat is up, or it isn't."* |
 | **Raj Patel** | Head of Platform Engineering | Build it in-house on Kubernetes. Fix on-call burnout. | *"My team is nine people, and four are on the on-call rota for the old gateway already. Don't hand us another pager without headcount."* |
 | **Gemma Ashworth** | Chief Procurement Officer | Consolidate vendors. Meet the Provider A commit. Reduce supplier count by 20%. | *"The commit saved us 18%. Routing traffic elsewhere means we pay for tokens we don't use."* |
 | **Alistair Brennan** | Group Chief Risk Officer | Concentration risk managed. DORA and operational resilience obligations met. Board-ready risk reporting. | *"Claims FNOL is an Important Business Service with a 24-hour impact tolerance. Show me how an AI vendor outage doesn't breach it."* |
@@ -176,7 +179,7 @@ Data comes from a two-week discovery exercise: API key scans, provider invoices 
   - C4 data must not leave UK/EU.
   - EU-entity personal data must not leave the EU without a transfer mechanism. Legal currently prohibits this for C4.
 - **Life mainframe:** only reachable via MuleSoft, at **≤ 120 TPS**. The batch window blocks reads from 01:00 to 05:00.
-- **Peak rate limits:** Provider A's EU quota is **4.0M input tokens/minute** org-wide. Estimated storm-surge peak demand is **9–11M TPM**.
+- **Peak rate limits:** Provider A's EU quota is **4.0M input tokens/minute** org-wide. Estimated storm-surge peak demand at early-2027 volumes is **9–11M TPM** (input + output, all providers combined). About 85% of that is input, so roughly **7.7–9.4M input TPM**.
 - **Identity:** existing agents can't easily be re-credentialed. 60% are owned by teams with no capacity this quarter.
 - **Migration:** the platform must support **gradual migration**. A big-bang cut-over is ruled out by the CTO.
 
@@ -188,10 +191,11 @@ Data comes from a two-week discovery exercise: API key scans, provider invoices 
 | Platform build and run (people excluded; infra, licences, tooling) | **£1.4m** (opex and capex combined) |
 | Headcount | Existing 9 platform engineers, **+4 approved hires** (start Q2 2027 at earliest) |
 | Provider A minimum commit | **$2.5m/yr** (≈ £1.97m at budget FX of 1.27) for 3 years, take-or-pay |
-| Splunk renewal (if renewed as-is) | £1.1m (from £0.8m) |
+| Splunk renewal (if renewed as-is) | £1.1m (from £0.8m). Paid from the Group IT run budget, **not** the £1.4m. Any extra Splunk ingest or licence caused by the AI platform is charged to the £1.4m. |
 | GPU refresh (if pursued) | Not budgeted. Any capex >£500k needs Board approval (next window: **April 2027**). |
 
-- 38% of current model spend is billed in **USD**.
+- 38% of current model spend is billed in **USD** (Provider A direct API). Provider A traffic via AWS is billed in GBP on the AWS invoice.
+- Provider A, across both routes, is about **55%** of current model spend.
 - **Chargeback:** the CFO wants it live from 1 Jan 2027, at agent level. Business units will **resist** anything they see as unfair.
 
 ### 5.3 Regulatory and compliance
@@ -233,6 +237,7 @@ Summaries are from the Legal and Compliance memo. Where something is uncertain, 
 | Customer-facing share of traffic | 18% | 25% | 40% | 55% |
 
 - **Assumption from Strategy:** blended price per token falls **25% per year**. Nobody has checked this against vendor roadmaps or Meridian's model mix.
+- **Unreconciled growth rates:** Strategy's token forecast implies roughly **4–5% growth a month** through FY2027. Actual spend grew about **13% a month** from May to October 2026 (Section 7.1). Nobody has reconciled the two.
 - **Northgate Bank requirements** (from the term sheet):
   - its data must be **logically and cryptographically isolated**
   - its own model and provider choices
@@ -331,16 +336,18 @@ Submit a single PDF or Markdown bundle. **Max 45 pages excluding appendices.** D
 
 ---
 
-*Part of [The Giblets Challenges](https://github.com/The-Giblets-Challenges). I wanted it. So I forged it. Now forge yours.*
-
 ## Rules
 
 Timeline, submission process and assessment: see [RULES.md](RULES.md).
+
+## Resources
+
+What you can and can't use, plus templates: see [RESOURCES.md](RESOURCES.md).
 
 ## Licence
 
 CC BY-NC-SA 4.0. See [LICENSE](LICENSE). Corrections: [CHANGELOG.md](CHANGELOG.md).
 
-## Resources
+---
 
-What you can and can't use, plus templates: see [RESOURCES.md](RESOURCES.md).
+*Part of [The Giblets Challenges](https://github.com/The-Giblets-Challenges). I wanted it. So I forged it. Now forge yours.*

@@ -42,7 +42,8 @@ The required deliverables are in **Section 8 of the README**:
    - approximate hours spent
    - the level you're aiming at: Senior / Staff / Architect / Principal
    - your AI tool usage: none / light / heavy, and what for
-3. Submissions are public once posted. Your commit SHA timestamps your work, so copying is easy to spot.
+3. Submissions are public once posted. **Your Issue's posting time is your submission time.** The commit SHA freezes your content.
+4. Keep the submitted commit reachable: don't force-push over it, rewrite history or delete the repo before feedback is published. If the SHA can't be found, the entry can't be reviewed.
 
 ## AI tools
 

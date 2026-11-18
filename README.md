@@ -56,6 +56,16 @@ Meridian Mutual, its people, providers, prices, contracts and incidents are enti
 - **Employees:** 11,400
 - **Customers:** 7.2m
 
+**Operating volumes (FY2026 estimate)**
+
+| Measure | Volume | Notes |
+|---|---|---|
+| Policies in force | 11.4m | All entities. Includes Life and Wealth products. |
+| GI claims notified (FNOL) per year | 1.2m | UK Insurance ~1.0m; Europe DAC ~150k; Versicherung ~50k. Storm months run at 3–5× the normal daily rate. |
+| Life & protection claims per year | 26k | Death, critical illness and income protection |
+| Life new-business applications per year | 180k | Each one goes through underwriting |
+| Customer service contacts per month | 1.1m | All channels: phone, web chat, app, WhatsApp, email |
+
 **Legal entities and jurisdictions**
 
 | Entity | Location | Regulator(s) | Business |
@@ -179,7 +189,11 @@ Data comes from a two-week discovery exercise: API key scans, provider invoices 
   - C4 data must not leave UK/EU.
   - EU-entity personal data must not leave the EU without a transfer mechanism. Legal currently prohibits this for C4.
 - **Life mainframe:** only reachable via MuleSoft, at **≤ 120 TPS**. The batch window blocks reads from 01:00 to 05:00.
-- **Peak rate limits:** Provider A's EU quota is **4.0M input tokens/minute** org-wide. Estimated storm-surge peak demand at early-2027 volumes is **9–11M TPM** (input + output, all providers combined). About 85% of that is input, so roughly **7.7–9.4M input TPM**.
+- **Peak rate limits**
+  - Provider A's EU quota is **4.0M input tokens/minute** org-wide. It is **shared** between the direct API and the AWS route. Raising it needs a quota request, with no guaranteed outcome or timeline.
+  - Provider B's default pay-as-you-go quota is **2.0M input TPM per region** (UK South, Sweden, France).
+  - Provider B provisioned throughput is sold in monthly blocks of **1M input TPM per region**, at **£90k per block per month**, with a lead time of **5 working days**. Traffic carried by a block isn't billed per token. The block fee is payable whether it's used or not.
+  - Estimated storm-surge peak demand at early-2027 volumes is **9–11M TPM** (input + output, all providers combined). About 85% of that is input, so roughly **7.7–9.4M input TPM**.
 - **Identity:** existing agents can't easily be re-credentialed. 60% are owned by teams with no capacity this quarter.
 - **Migration:** the platform must support **gradual migration**. A big-bang cut-over is ruled out by the CTO.
 
@@ -187,7 +201,7 @@ Data comes from a two-week discovery exercise: API key scans, provider invoices 
 
 | Item | FY2027 |
 |---|---|
-| Model/token spend (all providers, incl. Provider A commit) | **£3.6m hard cap** |
+| Model/token spend (all providers, incl. Provider A commit) | **£3.6m hard cap.** Includes embeddings and any provisioned throughput. Excludes LLM costs embedded in SaaS vendor licences, which business units pay inside licence fees, and self-hosted GPU running costs, which sit in the Group IT run budget. |
 | Platform build and run (people excluded; infra, licences, tooling) | **£1.4m** (opex and capex combined) |
 | Headcount | Existing 9 platform engineers, **+4 approved hires** (start Q2 2027 at earliest) |
 | Provider A minimum commit | **$2.5m/yr** (≈ £1.97m at budget FX of 1.27) for 3 years, take-or-pay |

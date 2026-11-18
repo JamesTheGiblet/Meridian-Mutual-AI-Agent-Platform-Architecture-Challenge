@@ -2,6 +2,12 @@
 
 Corrections to the brief during the challenge are logged here. If a fix changes a number you've already used, either is accepted. Say which version you used.
 
+## v1.2 (18 November 2026)
+Clarifications. Nothing in the existing evidence changed. These fill gaps that would otherwise make submissions hard to compare.
+- §2: added operating volumes (policies in force, claims per year, Life applications, customer contacts), so unit economics can be calculated.
+- §5.1: Provider A's EU quota is shared between the direct and AWS routes. Added Provider B's default quota and provisioned throughput terms.
+- §5.2: the £3.6m cap includes embeddings and provisioned throughput. It excludes SaaS-embedded LLM costs and self-hosted GPU running costs.
+
 ## v1.1 (17 November 2026)
 Clarifications. Nothing in the brief's evidence changed, but some ambiguities are now settled.
 - §3.3 Provider A: commit years align to the financial year (from 1 Jan 2027). The 18% discount applies only to spend above the commit. Spend via both access routes counts towards the commit.
